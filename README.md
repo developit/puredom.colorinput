@@ -5,8 +5,8 @@ It enhances color input fields with a graphical color picker in browsers that do
 
 *To use colorpicker, add the CSS and JS files to your page:*  
 ```html
-<link rel="stylesheet" type="text/css" href="puredom.colorpicker.css" />
-<script src="puredom.colorpicker.js"></script>
+<link rel="stylesheet" type="text/css" href="puredom.colorinput.css" />
+<script src="puredom.colorinput.js"></script>
 ```
 
 
