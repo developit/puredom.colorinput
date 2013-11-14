@@ -1,4 +1,3 @@
-
 puredom.colorinput
 ==================
 A puredom plugin that adds support for `<input type="color">` to forms wrapped in [puredom.FormHandler](http://puredom.org/docs/symbols/puredom.FormHandler.html).  
@@ -9,21 +8,26 @@ It enhances color input fields with a graphical color picker in browsers that do
 
 Selection Methods
 =================
-**`.colorinput( {Boolean} enabled )`**  
-Enable or disable color input for a field  
 
-**`.removecolorinput()`**  
-The same as calling `.colorinput(false)`  
+`.colorinput( {Boolean} enabled )`  
+*Enable or disable color input for a field*  
+
+`.removecolorinput()`  
+*The same as calling `.colorinput(false)`*  
 
 Example
 -------
-**HTML:**  
-```
-<input value="#5599CC" />
-```
-**JavaScript:**  
-```
-puredom('input').colorinput();
+```html
+<!-- standard input field -->
+<input id="myColor" value="#5599CC" />
+
+<script>
+	// To enable the color picker for that field:
+	puredom('#myColor').colorinput();
+	
+	// To disable it:
+	puredom('#myColor').colorinput(false);
+</script>
 ```
 
 
@@ -35,18 +39,16 @@ If you're using [puredom.FormHandler](http://puredom.org/docs/symbols/puredom.Fo
 
 Example
 -------
-**HTML:**  
-```
-<form>
+```html
+<form id="myForm">
 	<input type="color" value="#5599CC" />
 </form>
-```
-**JavaScript:**  
-```
-var form = new puredom.FormHandler({
-	form : puredom('form'),
-	enhance : true
-});
+
+<script>
+	var form = new puredom.FormHandler('#myForm', {
+		enhance : true
+	});
+</script>
 ```
 
 
