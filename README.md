@@ -3,7 +3,7 @@ puredom.colorinput
 A puredom plugin that adds support for `<input type="color">` to forms wrapped in [puredom.FormHandler](http://puredom.org/docs/symbols/puredom.FormHandler.html).  
 It enhances color input fields with a graphical color picker in browsers that don't natively support color input.  
 
-*To use colorpicker, add the CSS and JS files to your page:*  
+*To use colorinput, add the CSS and JS files to your page:*  
 ```html
 <link rel="stylesheet" type="text/css" href="puredom.colorinput.css" />
 <script src="puredom.colorinput.js"></script>
