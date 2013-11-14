@@ -234,7 +234,7 @@
 					hsv = api.currentColor.toHSV();
 				x = Math.min(Math.max(x, 0), width);
 				y = Math.min(Math.max(y, 0), height);
-				self.query('.colorPicker_huesat_fg').position(x, y);
+				self.query('.puredom_colorinput_huesat_fg').position(x, y);
 				hsv.s = Math.round((height-y)/height*100);
 				hsv.h = Math.round(x/width*362);
 				if (hsv.h>=360) {
@@ -280,7 +280,7 @@
 			}, document.body);
 			
 			update = function(e, tween) {
-				var y = Math.round(e.pageY - self.y(true)) - self.query('.colorPicker_value_fg').height()/4,
+				var y = Math.round(e.pageY - self.y(true)) - self.query('.puredom_colorinput_value_fg').height()/4,
 					height = self.height(),
 					hsv = api.currentColor.toHSV();
 				y = Math.min(Math.max(y, 0), height);
@@ -313,22 +313,22 @@
 		
 		createPicker : function() {
 			this.picker = puredom.el({
-				className : 'colorPicker',
+				className : 'puredom_colorinput',
 				children : [
-					{ className:'colorPicker_huesat', children:[
-						{ className:'colorPicker_huesat_bg' },
-						{ className:'colorPicker_huesat_fg', innerHTML:'+' }
+					{ className:'puredom_colorinput_huesat', children:[
+						{ className:'puredom_colorinput_huesat_bg' },
+						{ className:'puredom_colorinput_huesat_fg', innerHTML:'+' }
 					], onmousedown:function(e) {
 						return api.colorPickerHueSatMousedown(e, this);
 					}},
-					{ className:'colorPicker_value', children:[
-						{ className:'colorPicker_value_bg' },
-						{ className:'colorPicker_value_fg', innerHTML:decodeURIComponent('%E2%97%80') }
+					{ className:'puredom_colorinput_value', children:[
+						{ className:'puredom_colorinput_value_bg' },
+						{ className:'puredom_colorinput_value_fg', innerHTML:decodeURIComponent('%E2%97%80') }
 					], onmousedown:function(e) {
 						return api.colorPickerValueMousedown(e, this);
 					}},
-					{ className:'colorPicker_bgPreview' },
-					{ className:'colorPicker_fgPreview', innerHTML:'Example.' }
+					{ className:'puredom_colorinput_bgPreview' },
+					{ className:'puredom_colorinput_fgPreview', innerHTML:'Example.' }
 				],
 				onfocus : puredom.cancelEvent,
 				onmousedown : puredom.cancelEvent,
@@ -386,8 +386,8 @@
 				var hex = '#' + color.toHex(),
 					hsv = color.toHSV(),
 					bg,
-					valuePicker = this.picker.query('.colorPicker_value_fg'),
-					hueSatPicker = this.picker.query('.colorPicker_huesat_fg');
+					valuePicker = this.picker.query('.puredom_colorinput_value_fg'),
+					hueSatPicker = this.picker.query('.puredom_colorinput_huesat_fg');
 				// determine whether to use a dark or light background based on the color value
 				if (hsv.v<100) {
 					bg = '0 1px 3px rgba(255,255,255,'+((hsv.v)/200+0.5)+')';
@@ -403,12 +403,12 @@
 					(1-hsv.s/100) * hueSatPicker.parent().height()
 				);
 				// foreground preview
-				this.picker.query('.colorPicker_fgPreview').css({
+				this.picker.query('.puredom_colorinput_fgPreview').css({
 					color : hex,
 					'text-shadow' : bg
 				});
 				// background picker
-				this.picker.query('.colorPicker_bgPreview').css({
+				this.picker.query('.puredom_colorinput_bgPreview').css({
 					'background-color' : hex
 				});
 			
