@@ -15,8 +15,8 @@ Selection Methods
 `.removecolorinput()`  
 *The same as calling `.colorinput(false)`*  
 
-Example
--------
+Selection Example
+-----------------
 ```html
 <!-- standard input field -->
 <input id="myColor" value="#5599CC" />
@@ -33,12 +33,12 @@ Example
 
 ---
 
-FormHandler Usage
-=================
-If you're using [puredom.FormHandler](http://puredom.org/docs/symbols/puredom.FormHandler.html), color inputs are automatically enhanced.  
+Using With FormHandler
+======================
+If you're using [puredom.FormHandler](http://puredom.org/docs/symbols/puredom.FormHandler.html), all color inputs will be automatically enhanced once you include the plugin.  
 
-Example
--------
+FormHandler Example
+-------------------
 ```html
 <form id="myForm">
 	<input type="color" value="#5599CC" />
